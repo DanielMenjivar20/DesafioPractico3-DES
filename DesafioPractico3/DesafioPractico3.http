@@ -1,0 +1,6 @@
+@DesafioPractico3_HostAddress = http://localhost:5222
+
+GET {{DesafioPractico3_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
