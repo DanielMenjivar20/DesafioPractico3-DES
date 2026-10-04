@@ -11,7 +11,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.1.30001.02</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2026-10-04T18:30:57.2169400Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2026-10-04T19:48:47.4660796Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <df:DefaultFontFamily>Segoe UI</df:DefaultFontFamily>
   <AutoRefresh>0</AutoRefresh>
@@ -20,7 +20,7 @@
       <rd:SecurityType>Integrated</rd:SecurityType>
       <ConnectionProperties>
         <DataProvider>SQL</DataProvider>
-        <ConnectString>Data Source=(localdb)\mssqllocaldb;Initial Catalog=CompanyManagement</ConnectString>
+        <ConnectString>   Data Source=localhost\SQLEXPRESS;Initial Catalog=CompanyManagement</ConnectString>
         <IntegratedSecurity>true</IntegratedSecurity>
       </ConnectionProperties>
       <rd:DataSourceID>805724ec-0b77-4289-b552-96ee3da501e5</rd:DataSourceID>

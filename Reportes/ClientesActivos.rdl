@@ -11,7 +11,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.1.30001.02</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2026-10-04T05:23:44.1684525Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2026-10-04T19:54:08.3600361Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <df:DefaultFontFamily>Segoe UI</df:DefaultFontFamily>
   <AutoRefresh>0</AutoRefresh>
@@ -20,7 +20,7 @@
       <rd:SecurityType>Integrated</rd:SecurityType>
       <ConnectionProperties>
         <DataProvider>SQL</DataProvider>
-        <ConnectString>Data Source=(localdb)\mssqllocaldb;Initial Catalog=CompanyManagement</ConnectString>
+        <ConnectString>   Data Source=localhost\SQLEXPRESS;Initial Catalog=CompanyManagement</ConnectString>
         <IntegratedSecurity>true</IntegratedSecurity>
       </ConnectionProperties>
       <rd:DataSourceID>bde0ed3e-b01f-4e44-8d4c-366fecbc95b2</rd:DataSourceID>
@@ -261,7 +261,6 @@ ORDER BY TotalOrdenes DESC;</CommandText>
                                   <Value>=Fields!Nombre.Value</Value>
                                   <Style>
                                     <FontWeight>Normal</FontWeight>
-                                    <Color>White</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -292,7 +291,6 @@ ORDER BY TotalOrdenes DESC;</CommandText>
                               <Style>Solid</Style>
                               <Width>1pt</Width>
                             </RightBorder>
-                            <BackgroundColor>Gray</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -314,7 +312,6 @@ ORDER BY TotalOrdenes DESC;</CommandText>
                                   <Value>=Fields!Email.Value</Value>
                                   <Style>
                                     <FontWeight>Normal</FontWeight>
-                                    <Color>White</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -345,7 +342,6 @@ ORDER BY TotalOrdenes DESC;</CommandText>
                               <Style>Solid</Style>
                               <Width>1pt</Width>
                             </RightBorder>
-                            <BackgroundColor>Gray</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -367,7 +363,6 @@ ORDER BY TotalOrdenes DESC;</CommandText>
                                   <Value>=Sum(Fields!TotalOrdenes.Value)</Value>
                                   <Style>
                                     <FontWeight>Normal</FontWeight>
-                                    <Color>White</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -398,7 +393,6 @@ ORDER BY TotalOrdenes DESC;</CommandText>
                               <Style>Solid</Style>
                               <Width>1pt</Width>
                             </RightBorder>
-                            <BackgroundColor>Gray</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
