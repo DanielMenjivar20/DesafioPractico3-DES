@@ -98,6 +98,12 @@ builder.Services.AddSwaggerGen(c =>
 
 var app = builder.Build();
 
+// Ejecutar el Seeder de Identity al arrancar la aplicación
+using (var scope = app.Services.CreateScope())
+{
+    await IdentitySeeder.SeedAsync(scope.ServiceProvider, app.Configuration);
+}
+
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
