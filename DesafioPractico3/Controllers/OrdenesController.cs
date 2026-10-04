@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.OutputCaching;
 using Microsoft.EntityFrameworkCore;
 using DesafioPractico3.Data;
 using DesafioPractico3.Models;
@@ -12,61 +13,97 @@ namespace DesafioPractico3.Controllers
     public class OrdenesController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
+        private readonly IOutputCacheStore _cacheStore;
 
-        public OrdenesController(ApplicationDbContext context)
+        public OrdenesController(ApplicationDbContext context, IOutputCacheStore cacheStore)
         {
             _context = context;
+            _cacheStore = cacheStore;
         }
 
         // GET: api/ordenes
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Orden>>> GetOrdenes()
+        [OutputCache(PolicyName = "Ordenes")]
+        public async Task<ActionResult<IEnumerable<object>>> GetOrdenes()
         {
-            return await _context.Ordenes.Include(o => o.Cliente).ToListAsync();
+            var ordenes = await _context.Ordenes
+                .AsNoTracking()
+                .Select(o => new
+                {
+                    o.Id,
+                    o.ClienteId,
+                    Cliente = new { o.Cliente!.Id, o.Cliente.Nombre, o.Cliente.Email },
+                    o.FechaOrden,
+                    o.MontoTotal
+                })
+                .ToListAsync();
+
+            return Ok(ordenes);
         }
 
         // GET: api/ordenes/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Orden>> GetOrden(int id)
+        [OutputCache(PolicyName = "Ordenes")]
+        public async Task<ActionResult<object>> GetOrden(int id)
         {
             var orden = await _context.Ordenes
-                .Include(o => o.Cliente)
-                .FirstOrDefaultAsync(o => o.Id == id);
+                .AsNoTracking()
+                .Where(o => o.Id == id)
+                .Select(o => new
+                {
+                    o.Id,
+                    o.ClienteId,
+                    Cliente = new { o.Cliente!.Id, o.Cliente.Nombre, o.Cliente.Email },
+                    o.FechaOrden,
+                    o.MontoTotal
+                })
+                .FirstOrDefaultAsync();
 
             if (orden == null)
-            {
                 return NotFound(new { message = "Orden no encontrada" });
-            }
 
-            return orden;
+            return Ok(orden);
         }
 
         // GET: api/ordenes/cliente/5
         [HttpGet("cliente/{clienteId}")]
-        public async Task<ActionResult<IEnumerable<Orden>>> GetOrdenesPorCliente(int clienteId)
+        [OutputCache(PolicyName = "Ordenes")]
+        public async Task<ActionResult<IEnumerable<object>>> GetOrdenesPorCliente(int clienteId)
         {
             var ordenes = await _context.Ordenes
+                .AsNoTracking()
                 .Where(o => o.ClienteId == clienteId)
-                .Include(o => o.Cliente)
+                .Select(o => new
+                {
+                    o.Id,
+                    o.ClienteId,
+                    Cliente = new { o.Cliente!.Id, o.Cliente.Nombre, o.Cliente.Email },
+                    o.FechaOrden,
+                    o.MontoTotal
+                })
                 .ToListAsync();
 
-            return ordenes;
+            return Ok(ordenes);
         }
 
         // POST: api/ordenes
         [HttpPost]
         public async Task<ActionResult<Orden>> PostOrden(Orden orden)
         {
-            // Validar que el cliente exista antes de crear la orden
+            if (orden.MontoTotal <= 0)
+                return BadRequest(new { message = "El monto total debe ser mayor a cero." });
+
             var clienteExiste = await _context.Clientes.AnyAsync(c => c.Id == orden.ClienteId);
             if (!clienteExiste)
-            {
                 return BadRequest(new { message = "El ClienteId especificado no existe." });
-            }
 
-            orden.FechaOrden = DateTime.Now;
+            orden.FechaOrden = DateTime.UtcNow;
             _context.Ordenes.Add(orden);
             await _context.SaveChangesAsync();
+
+            // Los clientes incluyen sus órdenes, por eso se limpian ambas cachés
+            await _cacheStore.EvictByTagAsync("ordenes", default);
+            await _cacheStore.EvictByTagAsync("clientes", default);
 
             return CreatedAtAction(nameof(GetOrden), new { id = orden.Id }, orden);
         }
@@ -77,12 +114,13 @@ namespace DesafioPractico3.Controllers
         {
             var orden = await _context.Ordenes.FindAsync(id);
             if (orden == null)
-            {
-                return NotFound();
-            }
+                return NotFound(new { message = "Orden no encontrada" });
 
             _context.Ordenes.Remove(orden);
             await _context.SaveChangesAsync();
+
+            await _cacheStore.EvictByTagAsync("ordenes", default);
+            await _cacheStore.EvictByTagAsync("clientes", default);
 
             return NoContent();
         }
