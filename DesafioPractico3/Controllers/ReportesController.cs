@@ -16,7 +16,7 @@ namespace DesafioPractico3.Controllers
             return Ok(new
             {
                 reporte = "Clientes Activos",
-                url = "http://localhost/ReportServer/Pages/ReportViewer.aspx?/CompanyManagement/ClientesActivos"
+                url = "http://msi/Reports/report/ClientesActivos"
             });
         }
 
@@ -27,7 +27,7 @@ namespace DesafioPractico3.Controllers
             return Ok(new
             {
                 reporte = "Ingresos por Cliente",
-                url = "http://localhost/ReportServer/Pages/ReportViewer.aspx?/CompanyManagement/IngresosClientes"
+                url = "http://msi/Reports/report/IngresosClientes"
             });
         }
 
@@ -38,7 +38,7 @@ namespace DesafioPractico3.Controllers
             return Ok(new
             {
                 reporte = "Clientes Inactivos",
-                url = "http://localhost/ReportServer/Pages/ReportViewer.aspx?/CompanyManagement/ClientesInactivos"
+                url = "http://msi/Reports/report/ClientesInactivos"
             });
         }
     }

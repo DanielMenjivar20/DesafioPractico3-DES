@@ -3,11 +3,15 @@
   "WorkspaceRootPath": "C:\\Users\\dani2\\OneDrive\\Documentos\\GitHub\\DesafioPractico3-DES\\DesafioPractico3\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{F01B7B22-BF7A-43AA-9DAE-1B04056D1CDF}|..\\DesafioPractico3.Tests\\DesafioPractico3.Tests.csproj|c:\\users\\dani2\\onedrive\\documentos\\github\\desafiopractico3-des\\desafiopractico3.tests\\ordenescontrollertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{3B4E8823-B207-4B4A-80D2-04A0B5250B24}|DesafioPractico3.csproj|c:\\users\\dani2\\onedrive\\documentos\\github\\desafiopractico3-des\\desafiopractico3\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{3B4E8823-B207-4B4A-80D2-04A0B5250B24}|DesafioPractico3.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F01B7B22-BF7A-43AA-9DAE-1B04056D1CDF}|..\\DesafioPractico3.Tests\\DesafioPractico3.Tests.csproj|c:\\users\\dani2\\onedrive\\documentos\\github\\desafiopractico3-des\\desafiopractico3.tests\\ordenescontrollertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3B4E8823-B207-4B4A-80D2-04A0B5250B24}|DesafioPractico3.csproj|c:\\users\\dani2\\onedrive\\documentos\\github\\desafiopractico3-des\\desafiopractico3\\controllers\\reportescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3B4E8823-B207-4B4A-80D2-04A0B5250B24}|DesafioPractico3.csproj|solutionrelative:controllers\\reportescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F01B7B22-BF7A-43AA-9DAE-1B04056D1CDF}|..\\DesafioPractico3.Tests\\DesafioPractico3.Tests.csproj|c:\\users\\dani2\\onedrive\\documentos\\github\\desafiopractico3-des\\desafiopractico3.tests\\authtests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
@@ -23,24 +27,37 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
+              "Title": "ReportesController.cs",
+              "DocumentMoniker": "C:\\Users\\dani2\\OneDrive\\Documentos\\GitHub\\DesafioPractico3-DES\\DesafioPractico3\\Controllers\\ReportesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ReportesController.cs",
+              "ToolTip": "C:\\Users\\dani2\\OneDrive\\Documentos\\GitHub\\DesafioPractico3-DES\\DesafioPractico3\\Controllers\\ReportesController.cs",
+              "RelativeToolTip": "Controllers\\ReportesController.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAYwBgAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-05T01:09:41.35Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\dani2\\OneDrive\\Documentos\\GitHub\\DesafioPractico3-DES\\DesafioPractico3\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
               "ToolTip": "C:\\Users\\dani2\\OneDrive\\Documentos\\GitHub\\DesafioPractico3-DES\\DesafioPractico3\\appsettings.json",
               "RelativeToolTip": "appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAASAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2026-10-04T19:26:50.34Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "OrdenesControllerTests.cs",
               "DocumentMoniker": "C:\\Users\\dani2\\OneDrive\\Documentos\\GitHub\\DesafioPractico3-DES\\DesafioPractico3.Tests\\OrdenesControllerTests.cs",
               "RelativeDocumentMoniker": "..\\DesafioPractico3.Tests\\OrdenesControllerTests.cs",
@@ -53,7 +70,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "TestHelpers.cs",
               "DocumentMoniker": "C:\\Users\\dani2\\OneDrive\\Documentos\\GitHub\\DesafioPractico3-DES\\DesafioPractico3.Tests\\TestHelpers.cs",
               "RelativeDocumentMoniker": "..\\DesafioPractico3.Tests\\TestHelpers.cs",
@@ -65,7 +82,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "AuthTests.cs",
               "DocumentMoniker": "C:\\Users\\dani2\\OneDrive\\Documentos\\GitHub\\DesafioPractico3-DES\\DesafioPractico3.Tests\\AuthTests.cs",
               "RelativeDocumentMoniker": "..\\DesafioPractico3.Tests\\AuthTests.cs",

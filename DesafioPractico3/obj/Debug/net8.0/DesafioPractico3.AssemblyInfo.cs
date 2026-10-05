@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DesafioPractico3")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3ed10113c065d0807c10ae3b5cb7556982d5e64e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8b79a615b5a2aa4acb9ed3c42ef3cc356085365b")]
 [assembly: System.Reflection.AssemblyProductAttribute("DesafioPractico3")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DesafioPractico3")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
